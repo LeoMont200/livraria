@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>livraria</title>
+</head>
+
+<body>
+  <h2>Cadastro de livros</h2><br><br>
+  <input type="text" id="iptTitulo" placeholder="Título"><br><br>
+  <input type="text" id="iptAutor" placeholder="Autor"><br><br>
+  <input type="number" id="iptPrecoCompra" placeholder="Preço de compra"><br><br>
+  <input type="number" id="iptPrecoVenda" placeholder="Preço de venda"><br><br>
+  <input type="text" id="iptQtd" placeholder="Quantidade de estoque"><br><br>
+  <button onclick="cadastrar()">Cadastrar Livro</button><br><br>
+  <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+
+  function cadastrar() {
+    var titulo = iptTitulo.value
+    var autor = iptAutor.value
+    var precoCompra = Number(iptPrecoCompra.value)
+    var precoVenda = Number(iptPrecoVenda.value)
+    var qtd = Number(iptQtd.value)
+    var especialChar = ["?", "/", "°", "(", ")", "+", "=", "{", "}", "[", "]", "!", "@", "#", "$", "%", "-",
+      "_", "*", "|", ":", ";", ".", ",", ">", "<", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
+    ]
+    var validado = false
+    
+    for (var i = 0; i < autor.length; i++) {
+        for (var j = 0; j < especialChar.length; j++) {
+        if (autor[i] == especialChar[j]) {
+          mensagem.innerHTML = "O nome do autor não pode conter caracteres númericos ou especiais"
+          console.log("validação falhada")
+          var validado = false
+          break
+          
+        } else {
+          console.log("validação passada")
+          var validado = true
+        }
+      }
+    }
+    // fazer enviar para o banco pela rota dos avisos
+  }
+
+
+</script>
