@@ -50,6 +50,8 @@ function autenticar(req, res) {
     }
 
 }
+var livroModel = require("../models/usuarioModel");
+
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html

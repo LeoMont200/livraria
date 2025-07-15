@@ -21,3 +21,18 @@ fkGenero int,
 fkAutor int,
 	foreign key (fkAutor) references autor(idAutor)
 );
+
+insert into genero (nome) values
+('horror'),
+('romance'),
+('poesia'),
+('fantasia');
+
+
+insert into autor (nome) values
+('joao'),
+('leo'),
+('lorenzo'),
+('lukas'),
+('fernanda'),
+('fratini');
